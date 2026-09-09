@@ -3,7 +3,15 @@ severity: {}
 ignore:
   paths:
     - "docs/**"
-  matches: []
+  matches:
+    - rule: aws_access_key
+      path: "internal/client/client.go"
+      line: 10
+      reason: "тестовая утечка в demo-репозитории"
+    - rule: phone_ru
+      path: "internal/client/client.go"
+      line: 21
+      reason: "тестовое ПДн в demo-репозитории"
 scan:
   max_file_size_kb: 512
 output:
